@@ -22,19 +22,19 @@ agent any
      steps {
        //CheckoutWorkspace(branch: 'master', scmUrl: 'https://github.com/DineshNataraj/spring-framework-petclinic.git')
        echo "checkout workspace print"
-       checkout(branch: props["branch"] , scmUrl: props["repo"]) 
+       CheckOut(branch: props["branch"] , scmUrl: props["repo"]) 
        // myDeliveryPipeline('master', 'https://github.com/DineshNataraj/spring-framework-petclinic')
      }
     }
     stage('mvn build')
     {
       steps {
-        mavenbuild()
+        MavenBuild()
       }
     }
     stage('Junit Testing') {
        steps {
-          testing(props["testpath"])
+          TestingJunit(props["testpath"])
        }
     }
   }
