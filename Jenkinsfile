@@ -29,7 +29,9 @@ agent any
     stage('mvn build')
     {
       steps {
+       withMaven(maven: 'jenkinsmaven'){
         MavenBuild()
+       }
       }
     }
     stage('Junit Testing') {
