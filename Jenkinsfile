@@ -3,7 +3,8 @@ def readPropertiesValues(){
  def props = readProperties file: 'myvariables.properties'
  return props;
  }
-
+import groovy.json.*
+ 
 pipeline
 {
 agent any
