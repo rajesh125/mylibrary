@@ -1,3 +1,4 @@
-def call (String path) {
-      junit "${path}"
+def call () {
+      // junit "${path}"
+     sh 'mvn test'
 }
