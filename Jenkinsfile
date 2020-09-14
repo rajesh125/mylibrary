@@ -41,5 +41,16 @@ agent any
         }
        }
     }
+    stage ('Build Docker') {
+      steps {
+        withCredentials([usernamePassword(
+            credentialsId: props["dockercredid"],
+            usernameVariable: "Username",
+            passwordVariable: "Password"
+        )]) {
+        mybuilddocker(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
+        }
+      }
+    }
   }
 }
