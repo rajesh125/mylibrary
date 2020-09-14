@@ -36,7 +36,9 @@ agent any
     }
     stage('Junit Testing') {
        steps {
+        withMaven(maven: 'jenkinsmaven'){
           TestingJunit()
+        }
        }
     }
   }
