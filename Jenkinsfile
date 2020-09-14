@@ -48,7 +48,7 @@ agent any
             usernameVariable: "Username",
             passwordVariable: "Password"
         )]) {
-        mybuilddocker(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
+        DockerBuild(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
         }
       }
     }
