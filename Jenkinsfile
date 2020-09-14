@@ -36,7 +36,7 @@ agent any
     }
     stage('Junit Testing') {
        steps {
-          TestingJunit(props["testpath"])
+          TestingJunit()
        }
     }
   }
