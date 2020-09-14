@@ -20,10 +20,10 @@ agent any
   }
    stage('checkout'){
      steps {
-       //CheckoutWorkspace(branch: 'master', scmUrl: 'https://github.com/DineshNataraj/spring-framework-petclinic.git')
+      
        echo "checkout workspace print"
        CheckOut(branch: props["branch"] , scmUrl: props["repo"]) 
-       // myDeliveryPipeline('master', 'https://github.com/DineshNataraj/spring-framework-petclinic')
+    
      }
     }
     stage('mvn build')
