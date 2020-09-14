@@ -43,12 +43,14 @@ agent any
     }
     stage ('Build Docker') {
       steps {
+       withDocker(maven: 'mydocker'){
         withCredentials([usernamePassword(
             credentialsId: props["dockercredid"],
             usernameVariable: "Username",
             passwordVariable: "Password"
         )]) {
         DockerBuild(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
+        }
         }
       }
     }
