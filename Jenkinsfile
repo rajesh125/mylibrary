@@ -44,7 +44,7 @@ agent any
     stage ('Build Docker') {
       steps {
         withCredentials([usernamePassword(
-            credentialsId: props["dockercredid"],
+            credentialsId: props["docker-credentials"],
             usernameVariable: "Username",
             passwordVariable: "Password"
         )]) {
