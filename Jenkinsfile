@@ -1,4 +1,4 @@
-@Library('JenkinsLibraryNew') _
+@Library('mylibrary') _
 def readPropertiesValues(){
  def props = readProperties file: 'myvariables.properties'
  return props;
