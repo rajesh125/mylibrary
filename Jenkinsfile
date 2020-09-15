@@ -1,4 +1,4 @@
-@Library('mylibrary') _
+@Library('MyLibrary') _
 def readPropertiesValues(){
  def props = readProperties file: 'myvariables.properties'
  return props;
