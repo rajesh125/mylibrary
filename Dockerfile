@@ -11,7 +11,7 @@ VOLUME /tmp
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=target/SBtemplate-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/jsp-boot-tst-1.0-SNAPSHOT.war
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} SBtemplate.jar
