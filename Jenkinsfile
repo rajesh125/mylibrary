@@ -48,13 +48,13 @@ agent any
             usernameVariable: "Username",
             passwordVariable: "Password"
         )]) {
-        DockerBuild(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
+        DockerBuild(props["dockhubuser"], props["dockhubrepo"])
         }
       }
     }
    stage ('deploy'){
     steps{
-        deploy(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
+        deploy(props["dockhubuser"], props["dockhubrepo"])
      }
    }
      
