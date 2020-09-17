@@ -41,22 +41,22 @@ agent any
         //}
        //}
     //}
-    stage ('Build Docker') {
-      steps {
-        withCredentials([usernamePassword(
-            credentialsId: props["dockercredid"],
-            usernameVariable: "Username",
-            passwordVariable: "Password"
-        )]) {
-        DockerBuild(props["dockhubuser"], props["dockhubrepo"])
-        }
-      }
-    }
-   stage ('deploy'){
-    steps{
-        deploy(props["dockhubuser"], props["dockhubrepo"])
-     }
-   }
+    //stage ('Build Docker') {
+     // steps {
+      //  withCredentials([usernamePassword(
+        //    credentialsId: props["dockercredid"],
+          //  usernameVariable: "Username",
+            //passwordVariable: "Password"
+        //)]) {
+        //DockerBuild(props["dockhubuser"], props["dockhubrepo"])
+       // }
+     // }
+   // }
+   //stage ('deploy'){
+    //steps{
+      //  deploy(props["dockhubuser"], props["dockhubrepo"])
+     //}
+   //}
      
   }
 }
