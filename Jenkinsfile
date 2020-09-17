@@ -34,29 +34,29 @@ agent any
        }
       }
     }
-   // stage('Junit Testing') {
-     //  steps {
-       // withMaven(maven: 'jenkinsmaven'){
-         // TestingJunit()
-        //}
-       //}
-    //}
-    //stage ('Build Docker') {
-     // steps {
-      //  withCredentials([usernamePassword(
-        //    credentialsId: props["dockercredid"],
-          //  usernameVariable: "Username",
-            //passwordVariable: "Password"
-        //)]) {
-        //DockerBuild(props["dockhubuser"], props["dockhubrepo"])
-       // }
-     // }
-   // }
-   //stage ('deploy'){
-    //steps{
-      //  deploy(props["dockhubuser"], props["dockhubrepo"])
-     //}
-   //}
+    stage('Junit Testing') {
+       steps {
+        withMaven(maven: 'jenkinsmaven'){
+          TestingJunit()
+        }
+       }
+    }
+    stage ('Build Docker') {
+      steps {
+        withCredentials([usernamePassword(
+            credentialsId: props["dockercredid"],
+            usernameVariable: "Username",
+            passwordVariable: "Password"
+        )]) {
+        DockerBuild(props["dockhubuser"], props["dockhubrepo"])
+        }
+      }
+    }
+   stage ('deploy'){
+    steps{
+        deploy(props["dockhubuser"], props["dockhubrepo"])
+     }
+   }
      
   }
 }
