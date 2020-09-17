@@ -52,5 +52,17 @@ agent any
         }
       }
     }
+   stage ('deploy'){
+    steps{
+     withCredentials([usernamePassword(
+            credentialsId: props["dockercredid"],
+            usernameVariable: "Username",
+            passwordVariable: "Password"
+        )]) {
+        deploy(props["dockhubuser"], props["dockhubrepo"], props["dockhubtag"])
+        }
+    }
+   }
+     
   }
 }
