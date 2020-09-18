@@ -33,13 +33,13 @@ agent any
        }
       }
     }
-   // stage('Junit Testing') {
-     //  steps {
-       // withMaven(maven: 'jenkinsmaven'){
-         // TestingJunit()
-       // }
-       //}
-   // }
+   stage('Junit Testing') {
+       steps {
+        withMaven(maven: 'jenkinsmaven'){
+          TestingJunit()
+        }
+       }
+    }
     stage ('Build Docker') {
       steps {
         withCredentials([usernamePassword(
