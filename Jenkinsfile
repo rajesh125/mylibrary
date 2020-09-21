@@ -33,7 +33,7 @@ agent any
        }
       }
     }
-  // stage('Junit Testing') {
+  // stage('Testing') {
     //   steps {
      //   withMaven(maven: 'jenkinsmaven'){
        //   TestingJunit()
@@ -53,7 +53,7 @@ agent any
     }
    stage ('deploy'){
     steps{
-        deploy(props["dockhubuser"], props["dockhubrepo"])
+        Deploy(props["dockhubuser"], props["dockhubrepo"])
      }
    }
      
