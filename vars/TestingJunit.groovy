@@ -1,6 +1,6 @@
-def call (string testpath) {
+def call (String path) {
       
-      junit "${testpath}"
+      junit "${path}"
       
     // junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
 
