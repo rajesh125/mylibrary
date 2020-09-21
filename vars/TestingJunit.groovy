@@ -1,4 +1,4 @@
 def call () {
-      // junit "${path}"
-    sh "mvn test"
+      junit "${path}"
+    //sh "mvn test"
 }
