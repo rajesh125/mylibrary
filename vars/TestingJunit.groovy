@@ -1,4 +1,4 @@
-def call () {
+def call (string path) {
       
       junit "${path}"
       
