@@ -1,4 +1,3 @@
 def call() {
-      sh "mvn clean install"
-     
-      }
+      sh "mvn install -Dmaven.test.skip=true"
+     }
