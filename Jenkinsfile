@@ -36,7 +36,7 @@ agent any
   stage('Testing') {
        steps {
         withMaven(maven: 'jenkinsmaven'){
-          TestingJunit()
+          TestingJunit(props.junitloc.testpath)
         }
        }
     }
